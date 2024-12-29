@@ -1,0 +1,75 @@
+body{
+    background-color: #131416;
+}
+
+
+#finalLogo{
+    position: absolute;
+    top: 3%;
+    height: 10em;
+    width: 10em;
+}
+
+.comingSoonText{
+    position: absolute;
+    font-size: 1em;
+    font-family: fantasy;
+    left:44%;
+    top: 75%;
+    color: aliceblue;
+    word-spacing: 0.2em;
+    letter-spacing: 0.1em;
+}
+
+.heroText{
+    position: absolute;
+    font-size: 7em;
+    font-family: fantasy;
+    position: absolute;
+    left: 42%;
+    top:5%;
+    color: aliceblue;
+    text-shadow: #131416;
+    
+}
+
+.intellectify{
+    position: absolute;
+    font-size: 1.2em;
+    font-family: fantasy;
+    left: 35%;
+    top: 40%;
+    color: aliceblue;
+    word-spacing: 0.2em;
+    letter-spacing: 0.1em;
+}
+
+
+@media screen and (max-width: 475px){
+    .comingSoonText{
+        font-size: 0.7em;
+        left: 30%;
+        top: 75%;
+    }
+    .heroText{
+        font-size: 5em;
+        left: 30%;
+        top: 5%;
+    }
+    #finalLogo{
+        top:2em;
+        height: 7em;
+        width: 7em;
+        left:0.1em;
+    }
+
+    .intellectify{
+        font-size: 0.8em;
+        left: 20%;
+        top: 40%;
+    }
+}
+
+
+
+
