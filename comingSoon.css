@@ -30,6 +30,7 @@ body{
     top:5%;
     color: aliceblue;
     text-shadow: #131416;
+    z-index: 10;
     
 }
 

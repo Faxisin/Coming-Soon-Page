@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       spotlight.style.height = "200%";
       spotlight.style.background = "radial-gradient(circle, rgba(0, 0, 0, 0) 100px, rgba(0, 0, 0, 0.95) 400px)";
       spotlight.style.pointerEvents = "none";
-      spotlight.style.zIndex = "9999";
+      spotlight.style.zIndex = "99";
       spotlight.style.transition = "background 0.2s ease-in-out";
       document.body.appendChild(spotlight);
   
