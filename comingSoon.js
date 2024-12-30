@@ -30,16 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new URLSearchParams();
       formData.append("entry.1045781291", email); // Replace with your actual field ID
 
-      // Google Form URL for form response
-      const formURL = "https://script.google.com/macros/s/AKfycbx5-juVrX8Y7COdDWCtCoy1ZY_reqxnyzUL89byHWSKcp_0LWF0FESm2t67rJP1cjVXsA/exec";
+      // Google Apps Script URL for form response
+      const formURL = "https://script.google.com/macros/s/AKfycbzrYJeIeB-UVLMqqnsHsj1G8mkyv7NLDYYB4yN8cn4Um0e7HhrlM77lSbGODMmoJQQg3g/exec";
 
-      // Send data via POST request to Google Form
+      // Send data via POST request to Google Apps Script
       fetch(formURL, {
         method: "POST",
         body: formData, // Correctly formatted data
       })
-        .then(() => {
-          alert("Thank you for subscribing!");
+        .then(response => {
+          if (response.ok) {
+            alert("Thank you for subscribing!");
+            document.getElementById("email").value = ""; // Clear the email field after submission
+          } else {
+            alert("There was an error submitting the form.");
+          }
         })
         .catch(error => {
           console.error("Error:", error);
