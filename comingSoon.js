@@ -38,10 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
           fetch(formURL, {
               method: "POST",
               body: formData,
+              headers: {
+                "Accept": "application/json", // Optional for more strict form submissions
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
           })
           .then(response => {
               if (response.ok) {
                   alert("Thank you for subscribing!");
+                  // Optionally reset the form after successful submission
+                  document.getElementById("email").value = "";
               } else {
                   alert("There was an error submitting the form.");
               }
