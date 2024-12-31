@@ -21,27 +21,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Email submission functionality
+  // Email submission 
   document.getElementById("subscribeButton").addEventListener("click", function () {
     const email = document.getElementById("email").value;
 
     if (email) {
-      // Prepare form data
       const formData = new URLSearchParams();
-      formData.append("entry.1045781291", email); // Replace with your actual field ID
+      formData.append("entry.1045781291", email); // field ID with 'entry.' prefix
 
-      // Google Apps Script URL for form response
-      const formURL = "https://script.google.com/macros/s/AKfycbzrYJeIeB-UVLMqqnsHsj1G8mkyv7NLDYYB4yN8cn4Um0e7HhrlM77lSbGODMmoJQQg3g/exec";
+      const formURL = "https://script.google.com/macros/s/AKfycbzAvtA7EmGlpKf4apQpsF2b3Zi7udXqM8M76S3ZxitDRdSF0F2Bbp4VQT4p8Yt7AvYjxg/exec";
 
-      // Send data via POST request to Google Apps Script
       fetch(formURL, {
         method: "POST",
-        body: formData, // Correctly formatted data
+        body: formData,
       })
         .then(response => {
           if (response.ok) {
+            console.log("Response data:", response);
             alert("Thank you for subscribing!");
-            document.getElementById("email").value = ""; // Clear the email field after submission
+            document.getElementById("email").value = ""; 
+            console.log("Email submitted:", email);
           } else {
             alert("There was an error submitting the form.");
           }
